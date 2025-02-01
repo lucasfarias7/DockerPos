@@ -17,7 +17,7 @@ WORKDIR /src
 COPY ["ProjetoPosDocker.csproj", "ProjetoPosDocker/"]
 RUN dotnet restore "ProjetoPosDocker.csproj"
 COPY . .
-WORKDIR "/src/ProjetoPosDocker"
+WORKDIR "ProjetoPosDocker/"
 RUN dotnet build "ProjetoPosDocker.csproj" -c %BUILD_CONFIGURATION% -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
